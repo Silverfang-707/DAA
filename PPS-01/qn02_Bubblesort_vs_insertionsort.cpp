@@ -77,7 +77,7 @@ void worstCase(int n){
 
 int main(){
     int n;
-    printf("--------Bubble sort vs Selection Sort--------\n");
+    printf("--------Insertion sort vs Bubble Sort--------\n");
     printf("Enter the number of elements: ");
     scanf("%d",&n);
     printf("\n");
