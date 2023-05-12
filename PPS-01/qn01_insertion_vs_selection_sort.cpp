@@ -14,6 +14,7 @@ void selectionSort(vector<int> &elements, int n) {
         swap(elements[i], elements[minIndex]);
     }
 }
+
 void insertionSort(vector<int> &elements, int n) {  
     for(int j=1;j<n;j++)
     {
