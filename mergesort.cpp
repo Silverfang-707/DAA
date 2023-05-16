@@ -4,6 +4,7 @@ using namespace std;
 #include <ctime> 
 #include<limits.h>
 #include<math.h>
+#include<time.h>
 void merge(vector<int> &elements, int left, int mid, int right)
 {
 	vector<int> left_Sub_Array, right_Sub_Array;
@@ -101,6 +102,7 @@ void worstcase(int n)
 
 int main()
 {
+	srand(time(0));
 	int n;
 	cout<<"Enter the Number of elements: ";
 	cin>>n;
