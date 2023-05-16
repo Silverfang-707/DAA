@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include <time.h>
 using namespace std;
 
 void bubbleSort(vector<int> &elements, int n) {
@@ -76,6 +77,7 @@ void worstCase(int n){
 }
 
 int main(){
+    srand(time(0));
     int n;
     printf("--------Insertion sort vs Bubble Sort--------\n");
     printf("Enter the number of elements: ");
