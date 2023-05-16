@@ -3,17 +3,18 @@ using namespace std;
 #include<vector>
 #include <ctime> 
 #include <cstdlib>
+#include <time.h>
 int main()
 {
+	srand(time());
 	int i,n, min,max,ele;
-//	int a[20];
+	int a[20];
 	vector<int> a;
 	cout<<"Enter the Number of Elements: ";
 	cin>>n;
 	for(i=0;i<n;i++)
 	{
-		int ele = rand();
-		a.push_back(ele);
+		a.push_back(rand());
 	}
 	min = a[0];
 	max = a[0];
