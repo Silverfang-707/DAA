@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<ctime>
+#include<time.h>
 using namespace std;
 
 void averageCase(int n)
@@ -77,6 +78,7 @@ void worstCase(int n)
 
 int main()
 {
+    srand(time(0));
     int n;
     cout<<"Enter the number of elements: ";
     cin>>n;
