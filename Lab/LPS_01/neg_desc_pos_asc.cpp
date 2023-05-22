@@ -2,12 +2,26 @@
 #include <vector>
 using namespace std;
 
-void insertionSort(vector<int> &elements, int n) {  
+void insertionSortAsc(vector<int> &elements, int n) {  
     for(int j=1;j<n;j++)
     {
         int key = elements[j];
         int i = j-1;
         while((i>=0)&&(elements[i]>key))
+        {
+            elements[i+1] = elements[i];
+            i = i-1;
+        }
+        elements[i+1] = key;
+    }
+}
+
+void insertionSortDesc(vector<int> &elements, int n) {  
+    for(int j=1;j<n;j++)
+    {
+        int key = elements[j];
+        int i = j-1;
+        while((i>=0)&&(elements[i]<key))
         {
             elements[i+1] = elements[i];
             i = i-1;
@@ -29,10 +43,10 @@ void arrangeNumbers(vector<int> &numbers) {
     }
 
     // Sort negative numbers in descending order
-    insertionSort(negatives, negatives.size());
+    insertionSortDesc(negatives, negatives.size());
 
     // Sort positive numbers in ascending order
-    insertionSort(positives, positives.size());
+    insertionSortAsc(positives, positives.size());
 
     // Concatenate the negative numbers, zero, and positive numbers
     numbers.clear();
