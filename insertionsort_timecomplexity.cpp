@@ -25,7 +25,7 @@ void averageCase(int n)
         elements[i+1] = key;
     }
     double time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for AverageCase: "<<time1<<endl;
+    cout<<"Time taken for AverageCase: "<<time1<<endl;
 }
 
 void bestCase(int n)
@@ -73,7 +73,7 @@ void worstCase(int n)
         elements[i+1] = key;
     }
     double time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for WorstCase: "<<time1<<endl;
+    cout<<"Time taken for WorstCase: "<<time1<<endl;
 }
 
 int main()
