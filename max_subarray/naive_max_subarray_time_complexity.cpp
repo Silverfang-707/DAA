@@ -3,6 +3,7 @@ using namespace std;
 #include<vector>
 #include<limits.h>
 #include<time.h>
+#include<ctime>
 
 struct details
 {
@@ -49,15 +50,18 @@ int main()
 {
     srand(time(0));
     vector<int> A;
-    int low,high,n,i,ele;
+    int low,high,n,i;
     details ans;
-    cout<<"Enter the Number of elements: ";
+    cout<<"Enter the number of elements: ";
     cin>>n;
     for(i=0;i<n;i++)
     {
-        A.push_back(-10+rand()%10);
+        A.push_back(rand());
     }
-    cout<<"Finished IP\n";
+    cout<<"\nFinished IP"<<endl;;
+    clock_t start = clock();
     ans = find_maximum_subarray(A);
-    cout<<"low: "<<ans.low<<" "<<"High: "<<ans.high<<" "<<"Sum: "<<ans.sum<<endl;
+    double time1=(double)(clock() - start)/CLOCKS_PER_SEC;
+    cout<<ans.low<<" "<<ans.high<<" "<<ans.sum<<endl;
+    cout<<"Time taken: "<<time1<<endl;
 }
