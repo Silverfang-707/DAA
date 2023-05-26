@@ -74,7 +74,7 @@ int main() {
     // Print the arranged sequence
     cout <<"Arranged sequence: "<< endl;
     for (int num : numbers)
-        cout << num << " ";
+    cout << num << " ";
     cout << endl;
 
     return 0;
