@@ -190,7 +190,7 @@ int main()
 	int n;
 	cout<<"Enter the Number of elements: ";
 	cin>>n;
-	printf("With Sentinels:-\n");
+	printf("\nWith Sentinels:-\n");
 	averagecasesenti(n);
 	bestcasesenti(n);
 	worstcasesenti(n);
