@@ -38,12 +38,11 @@ void bestCase(int n){
     clock_t tStart = clock();    
     selectionSort(elements, n);
     double time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for BestCase in Selection Sort: "<<time1<<endl;
+    cout<<"Time taken for BestCase in Selection Sort: "<<time1<<endl;
     tStart = clock();
     insertionSort(elements, n);
     time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for BestCase in Insertion Sort: "<<time1<<endl;
-    printf("\n");
+    cout<<"Time taken for BestCase in Insertion Sort: "<<time1<<endl;
 }
 
 void averageCase(int n){
@@ -54,12 +53,11 @@ void averageCase(int n){
     clock_t tStart = clock();    
     selectionSort(elements, n);
     double time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for AverageCase in Selection Sort: "<<time1<<endl;
+    cout<<"Time taken for AverageCase in Selection Sort: "<<time1<<endl;
     tStart = clock();
     insertionSort(elements, n);
     time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for AverageCase in Insertion Sort: "<<time1<<endl;
-    printf("\n");
+    cout<<"Time taken for AverageCase in Insertion Sort: "<<time1<<endl;
 }
 
 void worstCase(int n){
@@ -70,21 +68,20 @@ void worstCase(int n){
     clock_t tStart = clock();    
     selectionSort(elements, n);
     double time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for WorstCase in Selection Sort: "<<time1<<endl;
+    cout<<"Time taken for WorstCase in Selection Sort: "<<time1<<endl;
     tStart = clock();
     insertionSort(elements, n);
     time1=(double)(clock() - tStart)/CLOCKS_PER_SEC;
-	cout<<"Time taken for WorstCase in Insertion Sort: "<<time1<<endl;
-    printf("\n");
+    cout<<"Time taken for WorstCase in Insertion Sort: "<<time1<<endl;
 }
 
 int main(){
     srand(time(0));
     int n;
-    printf("--------Insertion Sort vs Selection Sort--------\n");
-    printf("Enter the number of elements: ");
-    scanf("%d",&n);
-    printf("\n");
+    cout<<"--------Insertion Sort vs Selection Sort--------\n"<<endl;
+    cout<<"Enter the number of elements: ";
+    cin>>n;
+    cout<<"\n";
     bestCase(n);
     averageCase(n);
     worstCase(n);    
