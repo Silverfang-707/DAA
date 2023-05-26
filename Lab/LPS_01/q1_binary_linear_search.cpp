@@ -78,7 +78,7 @@ int main() {
     cout <<"Position of the Element: "<<position<<endl;
     cout <<"\n";
 
-	cout<<"Time taken for Linear Search: "<<time2<<endl;
+    cout<<"Time taken for Linear Search: "<<time2<<endl;
     cout<<"Time taken for Binary Search: "<<time1<<endl;
     cout <<"\n";
 
