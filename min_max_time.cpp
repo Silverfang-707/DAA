@@ -6,7 +6,7 @@ using namespace std;
 #include <time.h>
 int main()
 {
-	srand(time());
+	srand(time(0));
 	int i,n, min,max,ele;
 	int a[20];
 	vector<int> a;
