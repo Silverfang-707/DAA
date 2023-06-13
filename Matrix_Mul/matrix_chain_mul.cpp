@@ -4,73 +4,38 @@ using namespace std;
 #include<limits.h>
 #include<ctime>
 #include<time.h>
-
-void matrix_chain_order(vector<int> p, vector<vector<int> >& m, vector<vector<int> >& s)
+int matrix_chain_mul(int i, int j, vector<int> &p)
 {
-    int n,l,i,j,k,q;
-    n = p.size()-1;
-    for(l=2;l<=n;l++)
-    {
-        for(i=1;i<=n-l+1;i++)
+    int min_cost = INT_MAX,k,left_cost,right_cost,total_cost;    
+    if(i==j)
+        return 0;
+    for(k=i;k<j;k++)
+    {       
+        left_cost = matrix_chain_mul(i,k,p);
+        right_cost = matrix_chain_mul(k+1,j,p);
+        total_cost = left_cost + right_cost + p[i-1] * p[k] * p[j];
+        if(total_cost<min_cost)
         {
-            j = i+l-1;
-            m[i-1][j-1] = INT_MAX;
-            for(k=i;k<=j-1;k++)
-            {
-                q = m[i-1][k-1] + m[k][j-1] + p[i-1]*p[k]*p[j];
-                if(q<m[i-1][j-1])
-                {
-                    m[i-1][j-1] = q;
-                    s[i-1][j-1] = k;
-                }
-            }
+            min_cost = total_cost;
+            
         }
     }
-}
-
-void print_Optimal_Parens(vector<vector<int> >& s, int i, int j)
-{
-    if(i==j)
-        cout<<"A"<<i;
-    else
-    {
-        cout<<"(";
-        print_Optimal_Parens(s,i,s[i-1][j-1]);
-        print_Optimal_Parens(s,s[i-1][j-1]+1,j);
-        cout<<")";
-    }
+    return min_cost;
 }
 
 int main()
 {
     srand(time(0));
-    int n,i,j;
+    int n;
+    vector<int> p;
     cout<<"Enter the number of elements: ";
     cin>>n;
-    vector<int> p(n);
-    for(i=0;i<n;i++)
-        p[i]=rand();
-    vector<vector<int> > m(n-1,vector<int>(n-1,0));
-    vector<vector<int> > s(n-1,vector<int>(n-1,0));
+    for(int z=0;z<n;z++){
+        p.push_back(rand());
+    }
     clock_t start = clock();
-    matrix_chain_order(p,m,s);
+    int ans = matrix_chain_mul(1,n-1,p);
     double time=(double)(clock() - start)/CLOCKS_PER_SEC;
-    cout<<"'M' table is "<<endl;
-    for(i=0;i<n-2;i++)
-    {
-        for(j=1;j<n-1;j++)
-            cout<<m[i][j]<<" ";
-        cout<<endl;
-    }
-    cout<<"\n'S' table is "<<endl;
-    for(i=0;i<n-2;i++)
-    {
-        for(j=0;j<n-1;j++)
-            cout<<s[i][j]<<" ";
-        cout<<endl;
-    }
-    
-    cout<<"\nMinimum cost is "<<m[0][n-2]<<endl<<"\n";
-    print_Optimal_Parens(s,1,n-1);
-    cout<<"\nTime taken: "<<time;
+    cout<<"Time Taken is: "<<time<<endl;
+    cout<<"Minimum cost: "<<ans<<endl;
 }
