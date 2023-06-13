@@ -72,5 +72,5 @@ int main()
     
     cout<<"\nMinimum cost is "<<m[0][n-2]<<endl<<"\n";
     print_Optimal_Parens(s,1,n-1);
-    cout<<"Time taken: "<<time;
+    cout<<"\nTime taken: "<<time;
 }
