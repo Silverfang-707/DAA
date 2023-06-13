@@ -36,6 +36,6 @@ int main()
     clock_t start = clock();
     int ans = matrix_chain_mul(1,n-1,p);
     double time=(double)(clock() - start)/CLOCKS_PER_SEC;
-    cout<<"Time Taken is: "<<time<<endl;
     cout<<"Minimum cost: "<<ans<<endl;
+    cout<<"Time Taken is: "<<time<<endl;
 }
