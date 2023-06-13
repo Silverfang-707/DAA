@@ -32,7 +32,7 @@ int main()
     srand(time(0));
     vector<int> p;
     int i,n,max_profit;
-    cout<<"Enter the number of elements: ";
+    cout<<"Enter the number of cuts: ";
     cin>>n;
     for(i=0;i<n;i++)
     {
